@@ -1,0 +1,58 @@
+<%- include('partials/header') -%>
+<div id='myMap' style='width: 400px; height: 400px;'></div>
+<script type='text/javascript'>
+  function loadMapScenario() {
+    map = new Microsoft.Maps.Map(document.getElementById('myMap'), {
+    credentials: 'AveUVzCf_U3LuA7ZrKW0O_cpICQp56NjbDrecj4DK6zR5Oi0uhTqdaAUkaQiBTGT',
+    zoom: 4,
+// I tried putting 'config.env.BING' in the credentials, but I don't think it's working-will circle back
+ });
+  }
+      </script>
+        <div class="container my-3">
+          <h1 class="display-4 text-center">
+            <i class="fas fa-map-marked mr-4"></i>Farm Locator
+          </h1>
+          <div
+            id="map"
+            style="width: 100%; height: 500px;border-radius: 5px;"
+          ></div>
+        </div>
+        <div class="container my-3">
+          <h1 class="display-4 text-center">
+            Add Farm
+          </h1>
+    
+          <form id="farm-form" class="mb-4">
+            <div class="form-group">
+              <label for="farm-id">Farm ID</label>
+              <input type="text" id="farm-id" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label for="farm-address">Farm Address</label>
+              <input type="text" id="farm-address" class="form-control" />
+            </div>
+            <button type="submit" class="btn btn-primary">Add Farm</button>
+            <a href="/profile" class="btn btn-secondary">Back</a>
+          </form>
+        </div>
+
+  <div class="container">
+    <div class="row justify-content-center mt-5">
+      <ul class="row list-unstyled">
+        <% for(var i=0; i<posts.length; i++) {%>
+          <li class="col-6 justify-content-between mt-5">
+            <a href="/post/<%= posts[i]._id%>">
+              <img class="img-fluid" src="<%= posts[i].image%>">
+            </a>
+          </li>
+        <% } %>
+        </ul>
+    </div>
+  </div>  
+  <script src="https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js"></script>
+  <script src="js/map.js"></script>
+  <script src="js/add.js"></script>
+  <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=loadMapScenario' async defer></script>
+</body>
+<%- include('partials/footer') -%>

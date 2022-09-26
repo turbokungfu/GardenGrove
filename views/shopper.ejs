@@ -19,10 +19,11 @@
 <div class="container">
   <div class="row justify-content-right float-end col-6">
     <ul class="row list-unstyled">
-      <% for(var i=0; i<posts.length; i++) {%>
+      <% for(var i=0; i<farms.length; i++) {%>
         <li class="col-6 justify-content-between mt-5">
-          <a href="/post/<%= posts[i]._id%>">
-            <img class="img-fluid" src="<%= posts[i].image%>">
+          <% farms.forEach(farms => { %>
+            <li><%= farms.farmID %></li>
+            <%})%>
           </a>
         </li>
       <% } %>
@@ -33,7 +34,7 @@
 
 
  
-<script src="https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js"></script>
+<!-- <script src="https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js"></script>
 <script src="js/map.js"></script>
-<script src="js/add.js"></script>
+<script src="js/add.js"></script> -->
 <%- include('partials/footer') -%>

@@ -1,4 +1,5 @@
 const Farm = require('../models/Farm');
+const myFarm = require('../models/Farm');
 
 // @desc  Get all farms
 // @route GET /api/v1/farms
@@ -6,7 +7,6 @@ const Farm = require('../models/Farm');
 exports.getFarms = async (req, res, next) => {
   try {
     const farms = await Farm.find();
-
     return res.status(200).json({
       success: true,
       count: farms.length,

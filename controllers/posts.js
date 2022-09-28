@@ -8,8 +8,8 @@ const Farm = require("../models/Farm");
 module.exports = {
    getFeed: async (req, res) => {
     console.log('farmfunction')
-    try {     const res = await Post.find({ user: req.user.id }).lean();
-              const data = await res
+    try {     const res = await Map.find({ user: req.user.id });
+              const data = await res.json();
               res.render("feed.ejs", { farms: farms, user: req.user })
               const farms = data.data.map(farm => {
       return {

@@ -12,7 +12,7 @@ const connectDB = require("./config/database");
 const mainRoutes = require("./routes/main");
 const postRoutes = require("./routes/posts");
 const commentRoutes = require("./routes/comments");
-const farmRoutes = require("./routes/farms");
+
 
 const app = express()
 
@@ -66,7 +66,6 @@ app.use(flash());
 app.use("/", mainRoutes);
 app.use("/post", postRoutes);
 app.use("/comment", commentRoutes);
-app.use("/farms", farmRoutes);
 
 const PORT = process.env.PORT || 5000
 

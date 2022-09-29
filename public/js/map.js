@@ -1,5 +1,3 @@
-
-
 mapboxgl.accessToken =
   'pk.eyJ1IjoibWlrZXJhbmRhenpvIiwiYSI6ImNsODlkZ3Y0ZzA1d3UzcWxramVmOWxleHMifQ.PCEB7uIAsMtiw9rkigHPug';
 const map = new mapboxgl.Map({
@@ -9,33 +7,36 @@ const map = new mapboxgl.Map({
   center: [-97.40194, 38.452625]
 });
 
+
 // Fetch farms from API
 async function getFarms() {
-  const res = await fetch('/api/v1/farms');
+
+  const res = await fetch('/post');
+  console.log(res, 'hi')
   const data = await res.json();
-  const farms = data.data.map(farm => {
+
+  const posts = data.data.map(post => {
     return {
       type: 'Feature',
       geometry: {
         type: 'Point',
         coordinates: [
-          farm.location.coordinates[0],
-          farm.location.coordinates[1]
+          post.location.coordinates[0],
+          post.location.coordinates[1]
         ]
       },
       properties: {
-        farmId: farm.farmId,
-        icon: 'shop',
+        farmid: post.farmid,
+        icon: 'shop'
       }
     };
   });
-  
 
-  loadMap(farms);
+  loadMap(posts);
 }
 
-// Load map with farms
-function loadMap(farms) {
+// Load map with stores
+function loadMap(posts) {
   map.on('load', function() {
     map.addLayer({
       id: 'points',
@@ -44,13 +45,13 @@ function loadMap(farms) {
         type: 'geojson',
         data: {
           type: 'FeatureCollection',
-          features: farms
+          features: posts
         }
       },
       layout: {
         'icon-image': '{icon}-15',
         'icon-size': 1.5,
-        'text-field': '{farmId}',
+        'text-field': '{storeId}',
         'text-font': ['Open Sans Semibold', 'Arial Unicode MS Bold'],
         'text-offset': [0, 0.9],
         'text-anchor': 'top'

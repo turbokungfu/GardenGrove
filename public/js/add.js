@@ -1,6 +1,6 @@
 const farmForm = document.getElementById('farm-form');
-const farmId = document.getElementById('farm-id');
-const farmAddress = document.getElementById('farm-address');
+const farmId = document.getElementById('farmid');
+const farmAddress = document.getElementById('farmaddress');
 
 // Send POST to API to add farm
 async function addFarm(e) {
@@ -16,7 +16,7 @@ async function addFarm(e) {
   };
 
   try {
-    const res = await fetch('/api/v1/farms', {
+    const res = await fetch('/post', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

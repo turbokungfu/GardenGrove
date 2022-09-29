@@ -37,6 +37,12 @@
               </form>
 
             </form>
+            <div class="container float-start col-6">
+              <div
+                id="map"
+                style="width: 500px; height: 500px;border-radius: 5px;"
+              ></div>
+
           </div>
       </div>
       <div class="col-6">
@@ -50,6 +56,9 @@
         <% } %>
         <% posts.forEach(posts => { %>
         <li><%= posts.location.formattedAddress%></li>
+        <li><%= posts.location.coordinates%></li>
+        <li><%= posts.title%></li>
+        <li><%= posts.caption%></li>
             <%})%>
         </ul>
         <div class="row justify-content-center mt-5">
@@ -61,4 +70,7 @@
     </div>
   </div>
 </div>
+<script src="https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js"></script>
+<script src="js/map.js"></script>
+<script src="js/add.js"></script>
 <%- include('partials/footer') -%>

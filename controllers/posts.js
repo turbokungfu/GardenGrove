@@ -40,8 +40,8 @@ module.exports = {
         caption: req.body.caption,
         likes: 0,
         user: req.user.id,
-        address: req.body.store-address,
-        farmid: req.body.store-id,
+        farmid: req.body.id,
+        address: req.body.address,
       });
       console.log("Post has been added!");
       res.redirect("/profile");

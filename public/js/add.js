@@ -1,22 +1,22 @@
-const farmForm = document.getElementById('farm-form');
-const farmId = document.getElementById('farmid');
-const farmAddress = document.getElementById('farmaddress');
+const storeForm = document.getElementById('store-form');
+const storeId = document.getElementById('store-id');
+const storeAddress= document.getElementById('store-address');
 
-// Send POST to API to add farm
-async function addFarm(e) {
+// Send POST to API to add store
+async function addStore(e) {
   e.preventDefault();
 
-  if (farmId.value === '' || farmAddress.value === '') {
+  if (storeId.value === '' || storeAddress.value === '') {
     alert('Please fill in fields');
   }
 
   const sendBody = {
-    farmId: farmId.value,
-    address: farmAddress.value
+    storeId: storeId.value,
+    address: storeAddress.value
   };
 
   try {
-    const res = await fetch('/post', {
+    const res = await fetch('/api/v1/stores', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -25,15 +25,15 @@ async function addFarm(e) {
     });
 
     if (res.status === 400) {
-      throw Error('Farm already exists!');
+      throw Error('Store already exists!');
     }
 
-    alert('Farm added!');
-    window.location.href = '/feed';
+    alert('Store added!');
+    window.location.href = '/index.html';
   } catch (err) {
     alert(err);
     return;
   }
 }
 
-farmForm.addEventListener('submit', addFarm);
+storeForm.addEventListener('submit', addStore);

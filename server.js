@@ -66,6 +66,7 @@ app.use(flash());
 app.use("/", mainRoutes);
 app.use("/post", postRoutes);
 app.use("/comment", commentRoutes);
+app.use('/api/v1/stores', require('./routes/stores'));
 
 const PORT = process.env.PORT || 5000
 

@@ -50,7 +50,7 @@ app.use(
     secret: "keyboard cat",
     resave: false,
     saveUninitialized: false,
-    store: MongoStore.create({ mongoUrl: process.env.DB_STRING, }),
+    store: new MongoStore({ mongooseConnection: process.env.DB_STRING }),
   })
 );
 

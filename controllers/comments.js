@@ -16,6 +16,14 @@ module.exports = {
       console.log(err);
     }
   },
+  getComment: async (req, res) => {
+    try {
+      const comment = await Comment.findById(req.params.id);
+      res.render("post.ejs", { comment: comment, user: req.user });
+    } catch (err) {
+      console.log(err);
+    }
+  },
   likeComment: async (req, res) => {
     try {
       await Post.findOneAndUpdate(

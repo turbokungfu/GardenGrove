@@ -1,18 +1,15 @@
 <%- include('partials/header') -%>
   <body>
     <div class="container">
-      <div class=" float-start col-2">
-        <img style="width: 150px;"  src="/imgs/trowel3.jpeg" alt="">
-      </div>
+
         <header class="d-flex justify-content-center py-3">
           <ul class="nav nav-pills ">
             <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
             <li class="nav-item"><a href="/login" class="nav-link">Login</a></li>
             <li class="nav-item"><a href="/signup" class="nav-link">Sign up</a></li>
           </ul>
+        </div>
         </header>
-        <section>
-        </script>
         <div class="container float-start col-6">
           <div
             id="map"
@@ -21,11 +18,11 @@
         </div>
 
 
-        </section>
 
-      </div>
+
+      
   </body>
   <script src="https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js"></script>
   <script src="js/map.js"></script>
   <script src="js/add.js"></script>
-</html>
+  <%- include('partials/footer') -%>

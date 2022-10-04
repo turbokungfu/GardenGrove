@@ -6,29 +6,38 @@
           <h1 class="display-4 text-center">
             <i class="fas fa-map-marked mr-4"></i>Farm Locator
           </h1>
-          <div
-            id="map"
-            style="width: 50%; height: 500px;border-radius: 5px;"
-          ></div>
-        </div>
+          </div>
+          <div class="container float-start col-6">
+            <div
+              id="map"
+              style="width: 500px; height: 500px;border-radius: 5px;"
+            ></div>
+            </div>
+  
   
 
-  <div class="container">
-    <div class="row justify-content-center mt-5">
+  <div class="container col-6 float-end">
       <ul class="row list-unstyled">
-        <% for(var i=0; i<posts.length; i++) {%>
-          <li class="col-6 justify-content-between mt-5">
-            <a href="/post/<%= posts[i]._id%>">
-              <img class="img-fluid" src="<%= posts[i].image%>">
-            </a>
-          </li>
-        <% } %>
+        <% for(var i=0; i<posts.length; i++){ %>
+          <a href="/post/<%= posts[i]._id%>">
+            <img class="img-fluid" src="<%= posts[i].image%>"> 
+          </a>
+        </li>
+        <li><%= posts[i].location.formattedAddress%></li>
+        <li><%= posts[i].title%></li>
+        <li><%= posts[i].caption%></li>
+            <%}%>
         </ul>
     </div>
-  </div>  
+
+    <div class="col-3 float-end">
+      <p><strong>User Name</strong>: <%= user.userName %></p>
+      <p><strong>Email</strong>: <%= user.email %></p>
+      <a href="/logout" class="col-3 btn btn-primary">Logout</a>
+  </div>
+
   <script src="https://api.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js"></script>
-  <!-- <script src="js/myMap.js"></script> -->
+  <script src="js/map.js"></script>
   <script src="js/add.js"></script>
-  <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?callback=loadMapScenario' async defer></script>
 </body>
 <%- include('partials/footer') -%>

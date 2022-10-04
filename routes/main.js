@@ -10,6 +10,7 @@ router.get("/", homeController.getIndex);
 router.get("/about", homeController.getAbout);
 router.get("/profile", ensureAuth, postsController.getProfile);
 router.get("/feed", ensureAuth, postsController.getFeed);
+router.get("/shopper", ensureAuth, postsController.getShopper);
 router.get("/login", authController.getLogin);
 router.post("/login", authController.postLogin);
 router.get("/logout", authController.logout);

@@ -3,7 +3,7 @@ mapboxgl.accessToken =
   const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v11',
-    zoom: 4,
+    zoom: 2,
     center: [-97.402171, 47.707741]
   });
   
@@ -47,7 +47,7 @@ mapboxgl.accessToken =
           }
         },
         layout: {
-          'icon-image': '{icon}-15',
+          'icon-image': 'garden-15',
           'icon-size': 1.5,
           'text-field': '{storeId}',
           'text-font': ['Open Sans Semibold', 'Arial Unicode MS Bold'],

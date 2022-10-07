@@ -1,5 +1,23 @@
 
+.box{
+  display: grid;
+  grid-template-columns: 2fr 2fr;
+  
+}
 
+.side{
+  background-color: #268f95;
+  margin-bottom: 5%;
+  height: 90%;
+  border-top-right-radius: 5%;
+  border-bottom-right-radius: 5%;
+}
+.pic{
+  height: 90%;
+  width: 1000%;
+  border-top-left-radius: 5%;
+  border-bottom-left-radius: 5%;
+}
 
 .wrapper {
     display: grid;

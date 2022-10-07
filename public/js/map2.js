@@ -11,7 +11,8 @@ mapboxgl.accessToken =
   async function getStores() {
     const res = await fetch('/api/v1/stores');
     const data = await res.json();
-    console.log(data)
+
+  console.log(data)
   
     const stores = data.data.map(store => {
       return {

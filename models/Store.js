@@ -24,6 +24,10 @@ const StoreSchema = new mongoose.Schema({
     },
     formattedAddress: String
   },
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User",
+  },
   createdAt: {
     type: Date,
     default: Date.now

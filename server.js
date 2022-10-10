@@ -64,6 +64,7 @@ app.use(flash());
 
 // Routes
 app.use("/", mainRoutes);
+app.use("/", postRoutes);
 app.use("/post", postRoutes);
 app.use("/comment", commentRoutes);
 app.use('/api/v1/stores', require('./routes/stores'));

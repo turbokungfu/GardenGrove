@@ -10,11 +10,29 @@
           </ul>
 
         </header>
-        <div class="container float-start col-6">
+        <div class="container col-12 col-sm-12 col-md-12 col-lg-6 float-start">
           <div
             id="map"
-            style="width: 400px; height: 500px;border-radius: 5px;"
+
           ></div>
+        </div>
+        <div class="container col-12 col-sm-12 col-md-12 col-lg-6 float-end">
+          <ul class="row list-unstyled">
+            <li class="box">
+               <% for(var i=0; i<3; i++){ %>
+                 <a href="/signup">
+                   
+                   <img class="img-fluid pic" src="<%= posts[i].image%>"> 
+                 </a>
+       
+       
+               <div class="side"><%= posts[i].location.formattedAddress%>
+               <%= posts[i].title%>
+               <%= posts[i].caption%></div>
+                   <%}%>
+       
+                 </li>
+           </ul>
         </div>
       </div>
 

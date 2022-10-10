@@ -13,6 +13,14 @@ module.exports = {
       console.log(err);
     }
   },
+  getFront: async (req, res) => {
+    try {
+      const posts = await Post.find().sort({ createdAt: "desc" }).lean();
+      res.render("index.ejs", { posts: posts , user: req.user });
+    } catch (err) {
+      console.log(err);
+    }
+  },
   getFeed: async (req, res) => {
     try {
       const posts = await Post.find().sort({ createdAt: "desc" }).lean();

@@ -16,24 +16,27 @@
 
           ></div>
         </div>
-        <div class="container col-12 col-sm-12 col-md-12 col-lg-6 float-end">
+        <div class="container col-12 col-sm-12 col-md-12 col-lg-6 float-end ">
           <ul class="row list-unstyled">
-            <li class="box">
-               <% for(var i=0; i<3; i++){ %>
-                 <a href="/signup">
-                   
-                   <img class="img-fluid pic" src="<%= posts[i].image%>"> 
-                 </a>
-       
-       
-               <div class="side"><%= posts[i].location.formattedAddress%>
-               <%= posts[i].title%>
-               <%= posts[i].caption%></div>
-                   <%}%>
-       
-                 </li>
-           </ul>
+       <li class="box">
+          <% for(var i=0; i<posts.length; i++){ %>
+            <a href="/login">
+              
+              <img class="img-fluid pic" src="<%= posts[i].image%>"> 
+            </a>
+  
+  
+          <div class="side">
+          <span style="font-weight: bold"> <%= posts[i].title  %></span>
+         <br>
+          <%= posts[i].location.formattedAddress%>
+          <br>
+          <span style="padding-bottom: 5px"><%= posts[i].caption.length <= 150? posts[i].caption: posts[i].caption.slice(0, 150)+'...' %></span>
         </div>
+              <%}%>
+  
+            </li>
+          </ul>
       </div>
 
 

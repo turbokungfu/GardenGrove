@@ -12,9 +12,12 @@
               </a>
     
     
-            <div class="side"><%= posts[i].location.formattedAddress%>
-            <%= posts[i].title%>
-            <%= posts[i].caption%></div>
+            <div class="side">
+            <span style="font-weight: bold"> <%= posts[i].title  %></span>
+           <br>
+            <%= posts[i].location.formattedAddress%>
+            <br>
+            <%= posts[i].caption.length <= 150? posts[i].caption: posts[i].caption.slice(0, 150)+'...' %></div>
                 <%}%>
     
               </li>

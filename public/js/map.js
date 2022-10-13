@@ -25,7 +25,7 @@ mapboxgl.accessToken =
         properties: {
           storeId: store.storeId,
           icon: 'shop',
-          storeName: store.address
+          storeName: store.title
         }
       };
     });

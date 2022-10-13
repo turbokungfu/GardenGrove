@@ -2,7 +2,7 @@
 
 production link: https://gardengrove-production.up.railway.app/
 
-https://i.imgur.com/s5Cg3bX.png
+![alt tag](https://i.imgur.com/s5Cg3bX.png)
 
 This is version 1 of Bryce Neil's social gardening plan. The idea is to connect consumers to gardeners and plot owners to gardeners who want to expand or start gardening projects.
 

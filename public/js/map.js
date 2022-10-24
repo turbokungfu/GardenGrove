@@ -24,7 +24,6 @@ mapboxgl.accessToken =
         },
         properties: {
           storeId: store.storeId,
-          icon: 'shop',
           storeName: store.title
         }
       };
@@ -64,7 +63,6 @@ mapboxgl.accessToken =
     // Copy coordinates array.
     const coordinates = e.features[0].geometry.coordinates.slice();
     const description = e.features[0].properties.storeName
-    console.log(e.features[0].geometry)
      
     // Ensure that if the map is zoomed out such that multiple
     // copies of the feature are visible, the popup appears

@@ -48,8 +48,9 @@
 
   #map{
     width: 100%;
-    height: 25em;
+    height: 38em;
     margin-bottom: 5px;
+    border-radius: 5%;
     
   }
   .footer {
